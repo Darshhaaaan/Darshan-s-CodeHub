@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="Webpage.css">
+  <link href='https://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet'>
+  <title>Quiz</title>
+</head>
+<style type="text/css">
+ * {cursor: url(https://cur.cursors-4u.net/mechanics/mec-4/mec332.cur), auto !important;} 
+</style>
+<a href="https://www.cursors-4u.com/cursor/2009/09/10/yorkshire-class.html" target="_blank" title="Yorkshire Class"><img src="https://cur.cursors-4u.net/cursor.png" border="0" alt="Yorkshire Class" style="position:absolute; top: 0px; right: 0px;" /></a>
+<body>
+  <div id="nameModel" class="start">
+  <div class="start-content">
+    <p>Enter your name:</p>
+    <input type="text" id="playerNameInput" placeholder="Your name">
+    <button id="btn" onclick="startGame()">Start Game</button>
+  </div>
+</div>
+  <div class="scoreBox"><p id="demo1">Player name: <br> Score: 0</p> <br>
+  <button id="btn1" onclick="timeOver()">Submit</button> </div> 
+  <div id="timer-container">
+    <div id="timer">Time left: 5:00</div>
+    <img src="https://i.postimg.cc/4db6CpRk/Bean-Eater-1x-1-0s-200px-200px-1.gif" alt="Timer Gif" id="timer-gif">
+</div>
+ <div class="result"><p id="demo"></p></div>
+<div class="question-container" id="question1" style="margin-top:50px;">
+  <p>1. Who was the first emperor of the Maurya Dynasty in India?</p>
+  <button onclick="checkAnswer('Bindusara', 'question1', this)">Bindusara</button>
+  <button onclick="checkAnswer('Chandragupta Maurya', 'question1', this)">Chandragupta Maurya</button><br>
+  <button onclick="checkAnswer('Harsha', 'question1', this)">Harsha</button>
+  <button onclick="checkAnswer('Ashoka', 'question1', this)">Ashoka</button>
+</div>
+
+<div class="question-container" id="question2">
+  <p>2. What ancient civilization is known for building the Pyramids?</p>
+  <button onclick="checkAnswer('Egyptians', 'question2', this)">Egyptians</button>
+  <button onclick="checkAnswer('Romans', 'question2', this)">Romans</button><br>
+  <button onclick="checkAnswer('Mesopotamians', 'question2', this)">Mesopotamians</button>
+  <button onclick="checkAnswer('Indus Valley', 'question2', this)">Indus Valley</button>
+</div>
+
+<div class="question-container" id="question3">
+  <p>3. Who is known as the 'Father of History'?</p>
+  <button onclick="checkAnswer('Aristotle', 'question3', this)">Aristotle</button>
+  <button onclick="checkAnswer('Socrates', 'question3', this)">Socrates</button><br>
+  <button onclick="checkAnswer('Herodotus', 'question3', this)">Herodotus</button>
+  <button onclick="checkAnswer('Plato', 'question3', this)">Plato</button>
+</div>
+
+<div class="question-container" id="question4">
+  <p>4. Which Indian freedom fighter famously said, 'Give me blood and I will give you freedom'?</p>
+  <button onclick="checkAnswer('Jawaharlal Nehru', 'question4', this)">Jawaharlal Nehru</button>
+  <button onclick="checkAnswer('Bhagat Singh', 'question4', this)">Bhagat Singh</button><br>
+  <button onclick="checkAnswer('Subhas Chandra Bose', 'question4', this)">Subhas Chandra Bose</button>
+  <button onclick="checkAnswer('Mahatma Gandhi', 'question4', this)">Mahatma Gandhi</button>
+</div>
+
+<div class="question-container" id="question5">
+  <p>5. Which empire was ruled by Akbar the Great?</p>
+  <button onclick="checkAnswer('Mughal Empire', 'question5', this)">Mughal Empire</button>
+  <button onclick="checkAnswer('Gupta Empire', 'question5', this)">Gupta Empire</button><br>
+  <button onclick="checkAnswer('Maurya Empire', 'question5', this)">Maurya Empire</button>
+  <button onclick="checkAnswer('Chola Empire', 'question5', this)">Chola Empire</button>
+</div>
+
+<div class="question-container" id="question6">
+  <p>6. What was the primary material used for tools in the Stone Age?</p>
+  <button onclick="checkAnswer('Iron', 'question6', this)">Iron</button>
+  <button onclick="checkAnswer('Copper', 'question6', this)">Copper</button><br>
+  <button onclick="checkAnswer('Bronze', 'question6', this)">Bronze</button>
+  <button onclick="checkAnswer('Stone', 'question6', this)">Stone</button>
+</div>
+
+<div class="question-container" id="question7">
+  <p>7. What year did the First World War begin?</p>
+  <button onclick="checkAnswer('1912', 'question7', this)">1912</button>
+  <button onclick="checkAnswer('1920', 'question7', this)">1920</button><br>
+  <button onclick="checkAnswer('1914', 'question7', this)">1914</button>
+  <button onclick="checkAnswer('1918', 'question7', this)">1918</button>
+</div>
+
+<div class="question-container" id="question8">
+  <p>8. Which ancient city was destroyed by a volcanic eruption from Mount Vesuvius?</p>
+  <button onclick="checkAnswer('Athens', 'question8', this)">Athens</button>
+  <button onclick="checkAnswer('Alexandria', 'question8', this)">Alexandria</button><br>
+  <button onclick="checkAnswer('Rome', 'question8', this)">Rome</button>
+  <button onclick="checkAnswer('Pompeii', 'question8', this)">Pompeii</button>
+</div>
+
+<div class="question-container" id="question9">
+  <p>9. In what year did India gain independence from British rule?</p>
+  <button onclick="checkAnswer('1945', 'question9', this)">1945</button>
+  <button onclick="checkAnswer('1947', 'question9', this)">1947</button><br>
+  <button onclick="checkAnswer('1950', 'question9', this)">1950</button>
+  <button onclick="checkAnswer('1952', 'question9', this)">1952</button>
+</div>
+
+<div class="question-container" id="question10">
+  <p>10. What is the oldest known written script, originating in ancient Mesopotamia?</p>
+  <button onclick="checkAnswer('Cuneiform', 'question10', this)">Cuneiform</button>
+  <button onclick="checkAnswer('Sanskrit', 'question10', this)">Sanskrit</button><br>
+  <button onclick="checkAnswer('Latin', 'question10', this)">Latin</button>
+  <button onclick="checkAnswer('Hieroglyphics', 'question10', this)">Hieroglyphics</button>
+</div>
+
+<div class="question-container" id="question11">
+  <p>11. What planet has the longest day?</p>
+  <button onclick="checkAnswer('Jupiter', 'question11', this)">Jupiter</button>
+  <button onclick="checkAnswer('Venus', 'question11', this)">Venus</button><br>
+  <button onclick="checkAnswer('Mars', 'question11', this)">Mars</button>
+  <button onclick="checkAnswer('Saturn', 'question11', this)">Saturn</button>
+</div>
+
+<div class="question-container" id="question12">
+  <p>12. Which galaxy will collide with the Milky Way?</p>
+  <button onclick="checkAnswer('Sombrero', 'question12', this)">Sombrero</button>
+  <button onclick="checkAnswer('Triangulum', 'question12', this)">Triangulum</button><br>
+  <button onclick="checkAnswer('Whirlpool', 'question12', this)">Whirlpool</button>
+  <button onclick="checkAnswer('Andromeda', 'question12', this)">Andromeda</button>
+</div>
+
+<div class="question-container" id="question13">
+  <p>13. Which planet is hottest due to its atmosphere?</p>
+  <button onclick="checkAnswer('Venus', 'question13', this)">Venus</button>
+  <button onclick="checkAnswer('Mercury', 'question13', this)">Mercury</button><br>
+  <button onclick="checkAnswer('Jupiter', 'question13', this)">Jupiter</button>
+  <button onclick="checkAnswer('Mars', 'question13', this)">Mars</button>
+</div>
+
+<div class="question-container" id="question14">
+  <p>14. What forms when a massive star collapses?</p>
+  <button onclick="checkAnswer('Supernova', 'question14', this)">Supernova</button>
+  <button onclick="checkAnswer('Black Hole', 'question14', this)">Black Hole</button><br>
+  <button onclick="checkAnswer('Quasar', 'question14', this)">Quasar</button>
+  <button onclick="checkAnswer('Nebula', 'question14', this)">Nebula</button>
+</div>
+
+<div class="question-container" id="question15">
+  <p>15. Which moon might have a subsurface ocean?</p>
+  <button onclick="checkAnswer('Callisto', 'question15', this)">Callisto</button>
+  <button onclick="checkAnswer('Io', 'question15', this)">Io</button><br>
+  <button onclick="checkAnswer('Europa', 'question15', this)">Europa</button>
+  <button onclick="checkAnswer('Ganymede', 'question15', this)">Ganymede</button>
+</div>
+
+<div class="question-container" id="question16">
+  <p>16. What is the radiation from the early universe called?</p>
+  <button onclick="checkAnswer('Microwave', 'question16', this)">Microwave</button>
+  <button onclick="checkAnswer('Gamma', 'question16', this)">Gamma</button><br>
+  <button onclick="checkAnswer('X-rays', 'question16', this)">X-rays</button>
+  <button onclick="checkAnswer('Solar', 'question16', this)">Solar</button>
+</div>
+
+<div class="question-container" id="question17">
+  <p>17. What is a star system with two stars called?</p>
+  <button onclick="checkAnswer('Cluster', 'question17', this)">Cluster</button>
+  <button onclick="checkAnswer('Quasar', 'question17', this)">Quasar</button><br>
+  <button onclick="checkAnswer('Solar', 'question17', this)">Solar</button>
+  <button onclick="checkAnswer('Binary', 'question17', this)">Binary</button>
+</div>
+
+<div class="question-container" id="question18">
+  <p>18. Which spacecraft reached interstellar space?</p>
+  <button onclick="checkAnswer('Voyager 1', 'question18', this)">Voyager 1</button>
+  <button onclick="checkAnswer('Hubble', 'question18', this)">Hubble</button><br>
+  <button onclick="checkAnswer('Pioneer', 'question18', this)">Pioneer</button>
+  <button onclick="checkAnswer('New Horizons', 'question18', this)">New Horizons</button>
+</div>
+
+<div class="question-container" id="question19">
+  <p>19. Which theory explains the universe's expansion?</p>
+  <button onclick="checkAnswer('String', 'question19', this)">String</button>
+  <button onclick="checkAnswer('Quantum', 'question19', this)">Quantum</button><br>
+  <button onclick="checkAnswer('Big Bang', 'question19', this)">Big Bang</button>
+  <button onclick="checkAnswer('Relativity', 'question19', this)">Relativity</button>
+</div>
+
+<div class="question-container" id="question20">
+  <p>20. What is a rapidly spinning neutron star?</p>
+  <button onclick="checkAnswer('Asteroid', 'question20', this)">Asteroid</button>
+  <button onclick="checkAnswer('Planet', 'question20', this)">Planet</button><br>
+  <button onclick="checkAnswer('Black Hole', 'question20', this)">Black Hole</button>
+  <button onclick="checkAnswer('Pulsar', 'question20', this)">Pulsar</button>
+</div>
+
+<div class="question-container" id="question21">
+  <p>21. Which animal is known as the "King of the Jungle"?</p>
+  <button onclick="checkAnswer('Lion', 'question21', this)">Lion</button>
+  <button onclick="checkAnswer('Tiger', 'question21', this)">Tiger</button><br>
+  <button onclick="checkAnswer('Bear', 'question21', this)">Bear</button>
+  <button onclick="checkAnswer('Elephant', 'question21', this)">Elephant</button>
+</div>
+
+<div class="question-container" id="question22">
+  <p>22. What is the largest species of shark?</p>
+  <button onclick="checkAnswer('Great White', 'question22', this)">Great White</button>
+  <button onclick="checkAnswer('Whale Shark', 'question22', this)">Whale Shark</button><br>
+  <button onclick="checkAnswer('Hammerhead', 'question22', this)">Hammerhead</button>
+  <button onclick="checkAnswer('Tiger Shark', 'question22', this)">Tiger Shark</button>
+</div>
+
+<div class="question-container" id="question23">
+  <p>23. What plant is known for its ability to trap and digest insects?</p>
+  <button onclick="checkAnswer('Cactus', 'question23', this)">Cactus</button>
+  <button onclick="checkAnswer('Venus Flytrap', 'question23', this)">Venus Flytrap</button><br>
+  <button onclick="checkAnswer('Oak Tree', 'question23', this)">Oak Tree</button>
+  <button onclick="checkAnswer('Sunflower', 'question23', this)">Sunflower</button>
+</div>
+
+<div class="question-container" id="question24">
+  <p>24. What is the fastest land animal?</p>
+  <button onclick="checkAnswer('Cheetah', 'question24', this)">Cheetah</button>
+  <button onclick="checkAnswer('Lion', 'question24', this)">Lion</button><br>
+  <button onclick="checkAnswer('Horse', 'question24', this)">Horse</button>
+  <button onclick="checkAnswer('Elephant', 'question24', this)">Elephant</button>
+</div>
+
+<div class="question-container" id="question25">
+  <p>25. What is the largest living species of turtle?</p>
+  <button onclick="checkAnswer('Leatherback', 'question25', this)">Leatherback</button>
+  <button onclick="checkAnswer('Green Turtle', 'question25', this)">Green Turtle</button><br>
+  <button onclick="checkAnswer('Hawksbill', 'question25', this)">Hawksbill</button>
+  <button onclick="checkAnswer('Loggerhead', 'question25', this)">Loggerhead</button>
+</div>
+
+<div class="question-container" id="question26">
+  <p>26. What is the process by which plants make their own food?</p>
+  <button onclick="checkAnswer('Respiration', 'question26', this)">Respiration</button>
+  <button onclick="checkAnswer('Photosynthesis', 'question26', this)">Photosynthesis</button><br>
+  <button onclick="checkAnswer('Pollination', 'question26', this)">Pollination</button>
+  <button onclick="checkAnswer('Germination', 'question26', this)">Germination</button>
+</div>
+
+<div class="question-container" id="question27">
+  <p>27. Which mammal is known for its ability to fly?</p>
+  <button onclick="checkAnswer('Flying Fish', 'question27', this)">Flying Fish</button>
+  <button onclick="checkAnswer('Bat', 'question27', this)">Bat</button><br>
+  <button onclick="checkAnswer('Flying Squirrel', 'question27', this)">Flying Squirrel</button>
+  <button onclick="checkAnswer('Bird', 'question27', this)">Bird</button>
+</div>
+
+<div class="question-container" id="question28">
+  <p>28. What is the largest species of whale?</p>
+  <button onclick="checkAnswer('Fin Whale', 'question28', this)">Fin Whale</button>
+  <button onclick="checkAnswer('Humpback Whale', 'question28', this)">Humpback Whale</button><br>
+  <button onclick="checkAnswer('Orca', 'question28', this)">Orca</button>
+  <button onclick="checkAnswer('Blue Whale', 'question28', this)">Blue Whale</button>
+</div>
+
+<div class="question-container" id="question29">
+  <p>29. Which insect is known for its role in pollination?</p>
+  <button onclick="checkAnswer('Butterfly', 'question29', this)">Butterfly</button>
+  <button onclick="checkAnswer('Dragonfly', 'question29', this)">Dragonfly</button><br>
+  <button onclick="checkAnswer('Bee', 'question29', this)">Bee</button>
+  <button onclick="checkAnswer('Ant', 'question29', this)">Ant</button>
+</div>
+
+<div class="question-container" id="question30">
+  <p>30. What is the largest flower in the world?</p>
+  <button onclick="checkAnswer('Rafflesia', 'question30', this)">Rafflesia</button>
+  <button onclick="checkAnswer('Lotus', 'question30', this)">Lotus</button><br>
+  <button onclick="checkAnswer('Sunflower', 'question30', this)">Sunflower</button>
+  <button onclick="checkAnswer('Titan Arum', 'question30', this)">Titan Arum</button>
+</div>
+
+<div class="question-container" id="question31" style="margin-top:50px;">
+  <p>31. What is the Earth's outermost layer called?</p>
+  <button onclick="checkAnswer('Core', 'question31', this)">Core</button>
+  <button onclick="checkAnswer('Mantle', 'question31', this)">Mantle</button><br>
+  <button onclick="checkAnswer('Crust', 'question31', this)">Crust</button>
+  <button onclick="checkAnswer('Ozone', 'question31', this)">Ozone</button>
+</div>
+
+<div class="question-container" id="question32">
+  <p>32. Which type of rock is formed from cooled lava?</p>
+  <button onclick="checkAnswer('Sedimentary', 'question32', this)">Sedimentary</button>
+  <button onclick="checkAnswer('Igneous', 'question32', this)">Igneous</button><br>
+  <button onclick="checkAnswer('Metamorphic', 'question32', this)">Metamorphic</button>
+  <button onclick="checkAnswer('Carbonate', 'question32', this)">Carbonate</button>
+</div>
+
+<div class="question-container" id="question33">
+  <p>33. What is the longest mountain range on Earth?</p>
+  <button onclick="checkAnswer('Himalayas', 'question33', this)">Himalayas</button>
+  <button onclick="checkAnswer('Rockies', 'question33', this)">Rockies</button><br>
+  <button onclick="checkAnswer('Andes', 'question33', this)">Andes</button>
+  <button onclick="checkAnswer('Alps', 'question33', this)">Alps</button>
+</div>
+
+<div class="question-container" id="question34">
+  <p>34. Which rock is commonly known as limestone?</p>
+  <button onclick="checkAnswer('Sandstone', 'question34', this)">Sandstone</button>
+  <button onclick="checkAnswer('Marble', 'question34', this)">Marble</button><br>
+  <button onclick="checkAnswer('Calcite', 'question34', this)">Calcite</button>
+  <button onclick="checkAnswer('Shale', 'question34', this)">Shale</button>
+</div>
+
+<div class="question-container" id="question35">
+  <p>35. What is the process of breaking down rocks called?</p>
+  <button onclick="checkAnswer('Erosion', 'question35', this)">Erosion</button>
+  <button onclick="checkAnswer('Metamorphosis', 'question35', this)">Metamorphosis</button><br>
+  <button onclick="checkAnswer('Fossilization', 'question35', this)">Fossilization</button>
+  <button onclick="checkAnswer('Weathering', 'question35', this)">Weathering</button>
+</div>
+
+<div class="question-container" id="question36">
+  <p>36. Which type of volcano is most dangerous?</p>
+  <button onclick="checkAnswer('Shield', 'question36', this)">Shield</button>
+  <button onclick="checkAnswer('Cinder', 'question36', this)">Cinder</button><br>
+  <button onclick="checkAnswer('Composite', 'question36', this)">Composite</button>
+  <button onclick="checkAnswer('Caldera', 'question36', this)">Caldera</button>
+</div>
+
+<div class="question-container" id="question37">
+  <p>37. Which country is home to the largest desert in the world?</p>
+  <button onclick="checkAnswer('Australia', 'question37', this)">Australia</button>
+  <button onclick="checkAnswer('Asia', 'question37', this)">Asia</button><br>
+  <button onclick="checkAnswer('USA', 'question37', this)">USA</button>
+  <button onclick="checkAnswer('Africa', 'question37', this)">Africa</button>
+</div>
+
+<div class="question-container" id="question38">
+  <p>38. What causes earthquakes?</p>
+  <button onclick="checkAnswer('Wind', 'question38', this)">Wind</button>
+  <button onclick="checkAnswer('Volcanoes', 'question38', this)">Volcanoes</button><br>
+  <button onclick="checkAnswer('Tectonic Plates', 'question38', this)">Tectonic Plates</button>
+  <button onclick="checkAnswer('Gravity', 'question38', this)">Gravity</button>
+</div>
+
+<div class="question-container" id="question39">
+  <p>39. What is the deepest point on Earth?</p>
+  <button onclick="checkAnswer('Mount Everest', 'question39', this)">Mount Everest</button>
+  <button onclick="checkAnswer('Mariana Trench', 'question39', this)">Mariana Trench</button><br>
+  <button onclick="checkAnswer('Grand Canyon', 'question39', this)">Grand Canyon</button>
+  <button onclick="checkAnswer('Lake Baikal', 'question39', this)">Lake Baikal</button>
+</div>
+
+<div class="question-container" id="question40">
+  <p>40. What is the movement of water through the Earth's crust called?</p>
+  <button onclick="checkAnswer('Hydrosphere', 'question40', this)">Hydrosphere</button>
+  <button onclick="checkAnswer('Aquifer', 'question40', this)">Aquifer</button><br>
+  <button onclick="checkAnswer('Hydrolysis', 'question40', this)">Hydrolysis</button>
+  <button onclick="checkAnswer('Groundwater', 'question40', this)">Groundwater</button>
+</div>
+
+<div class="question-container" id="question41" style="margin-top:50px;">
+  <p>41. Who is known as the father of modern physics?</p>
+  <button onclick="checkAnswer('Albert Einstein', 'question41', this)">Albert Einstein</button>
+  <button onclick="checkAnswer('Isaac Newton', 'question41', this)">Isaac Newton</button>
+  <button onclick="checkAnswer('Nikola Tesla', 'question41', this)">Nikola Tesla</button><br>
+  <button onclick="checkAnswer('Marie Curie', 'question41', this)">Marie Curie</button>
+  <button onclick="checkAnswer('Albert Einstein', 'question41', this)">Albert Einstein</button>
+</div>
+
+<div class="question-container" id="question42">
+  <p>42. What was the first successful powered flight by humans?</p>
+  <button onclick="checkAnswer('Hot Air Balloon', 'question42', this)">Hot Air Balloon</button>
+  <button onclick="checkAnswer('Wright brothers\' Flyer', 'question42', this)">Wright brothers' Flyer</button><br>
+  <button onclick="checkAnswer('Zeppelin', 'question42', this)">Zeppelin</button>
+  <button onclick="checkAnswer('SpaceX Falcon 9', 'question42', this)">SpaceX Falcon 9</button>
+</div>
+
+<div class="question-container" id="question43">
+  <p>43. Which scientist developed the theory of general relativity?</p>
+  <button onclick="checkAnswer('Albert Einstein', 'question43', this)">Albert Einstein</button>
+  <button onclick="checkAnswer('Stephen Hawking', 'question43', this)">Stephen Hawking</button><br>
+  <button onclick="checkAnswer('Galileo Galilei', 'question43', this)">Galileo Galilei</button>
+  <button onclick="checkAnswer('Isaac Newton', 'question43', this)">Isaac Newton</button>
+</div>
+
+<div class="question-container" id="question44">
+  <p>44. Who is credited with the discovery of penicillin?</p>
+  <button onclick="checkAnswer('Louis Pasteur', 'question44', this)">Louis Pasteur</button>
+  <button onclick="checkAnswer('Alexander Fleming', 'question44', this)">Alexander Fleming</button><br>
+  <button onclick="checkAnswer('Marie Curie', 'question44', this)">Marie Curie</button>
+  <button onclick="checkAnswer('Isaac Newton', 'question44', this)">Isaac Newton</button>
+</div>
+
+<div class="question-container" id="question45">
+  <p>45. What year did the first human land on the moon?</p>
+  <button onclick="checkAnswer('1969', 'question45', this)">1969</button>
+  <button onclick="checkAnswer('1972', 'question45', this)">1972</button><br>
+  <button onclick="checkAnswer('1959', 'question45', this)">1959</button>
+  <button onclick="checkAnswer('1980', 'question45', this)">1980</button>
+</div>
+
+<div class="question-container" id="question46">
+  <p>46. Who invented the first practical telephone?</p>
+  <button onclick="checkAnswer('Thomas Edison', 'question46', this)">Thomas Edison</button>
+  <button onclick="checkAnswer('Alexander Graham Bell', 'question46', this)">Alexander Graham Bell</button><br>
+  <button onclick="checkAnswer('Nikola Tesla', 'question46', this)">Nikola Tesla</button>
+  <button onclick="checkAnswer('Michael Faraday', 'question46', this)">Michael Faraday</button>
+</div>
+
+<div class="question-container" id="question47">
+  <p>47. What is the primary component of a computer's brain?</p>
+  <button onclick="checkAnswer('RAM', 'question47', this)">RAM</button>
+  <button onclick="checkAnswer('Hard drive', 'question47', this)">Hard drive</button><br>
+  <button onclick="checkAnswer('CPU', 'question47', this)">CPU</button>
+  <button onclick="checkAnswer('GPU', 'question47', this)">GPU</button>
+</div>
+
+<div class="question-container" id="question48">
+  <p>48. Which company developed the first commercial computer?</p>
+  <button onclick="checkAnswer('IBM', 'question48', this)">IBM</button>
+  <button onclick="checkAnswer('Apple', 'question48', this)">Apple</button><br>
+  <button onclick="checkAnswer('Microsoft', 'question48', this)">Microsoft</button>
+  <button onclick="checkAnswer('Dell', 'question48', this)">Dell</button>
+</div>
+
+<div class="question-container" id="question49">
+  <p>49. What was the first video game console released?</p>
+  <button onclick="checkAnswer('Atari 2600', 'question49', this)">Atari 2600</button>
+  <button onclick="checkAnswer('Nintendo', 'question49', this)">Nintendo</button><br>
+  <button onclick="checkAnswer('Magnavox Odyssey', 'question49', this)">Magnavox Odyssey</button>
+  <button onclick="checkAnswer('Sega Genesis', 'question49', this)">Sega Genesis</button>
+</div>
+
+<div class="question-container" id="question50">
+  <p>50. What innovation did Tim Berners-Lee create in 1989?</p>
+  <button onclick="checkAnswer('Smartphone', 'question50', this)">Smartphone</button>
+  <button onclick="checkAnswer('Internet browser', 'question50', this)">Internet browser</button><br>
+  <button onclick="checkAnswer('World Wide Web', 'question50', this)">World Wide Web</button>
+  <button onclick="checkAnswer('Wi-Fi', 'question50', this)">Wi-Fi</button>
+</div>
+<div id="endCredits" class="end">
+  <div class="end-content">
+    <p id="demo2"></p>
+    <button id="btn" onclick="location.reload()">Reload Page</button>
+  </div>
+<script type="text/javascript" src="Javascript.js"></script>
+</body>
+</html>
